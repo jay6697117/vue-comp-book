@@ -48,6 +48,7 @@ export default new Router({
       path: '/404',
       component: () => import('@/views/404.vue')
     },
+    // 匹配没有的路由到404
     { path: '*', redirect: { path: '/404' } }
   ]
 });

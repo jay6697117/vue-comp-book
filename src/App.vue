@@ -29,9 +29,23 @@
       </ul>
     </div>
     <hr />
-    <router-view />
+    <div id="container">
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
 export default {};
 </script>
+
+<style lang="css">
+#nav {
+  padding: 5px 20px;
+  background-color: rgba(173, 216, 230, 0.8);
+}
+
+#container {
+  padding: 20px;
+  background-color: rgba(0, 128, 0, 0.2);
+}
+</style>
