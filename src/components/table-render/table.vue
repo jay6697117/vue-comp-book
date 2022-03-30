@@ -2,12 +2,12 @@
   <table>
     <thead>
       <tr>
-        <th v-for="col in columns">{{ col.title }}</th>
+        <th v-for="(col,index) in columns" :key="index">{{ col.title }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, rowIndex) in data">
-        <td v-for="col in columns">
+      <tr v-for="(row, rowIndex) in data" :key="rowIndex">
+        <td v-for="(col,colIndex) in columns" :key="colIndex">
           <template v-if="'render' in col">
             <Render :row="row" :column="col" :index="rowIndex" :render="col.render"></Render>
           </template>
