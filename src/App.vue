@@ -23,6 +23,9 @@
         <li>
           <router-link to="/tree">实战 7：树形控件 —— Tree</router-link>
         </li>
+        <li>
+          <router-link to="/404">404页面</router-link>
+        </li>
       </ul>
     </div>
     <hr />

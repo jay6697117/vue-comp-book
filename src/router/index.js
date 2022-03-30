@@ -4,7 +4,9 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'hash',
   routes: [
+    // 主页
     {
       path: '/',
       component: () => import('@/views/index.vue')
@@ -41,6 +43,7 @@ export default new Router({
       path: '/input-number',
       component: () => import('@/views/input-number.vue')
     },
+    // 404页面
     {
       path: '*',
       component: () => import('@/views/404.vue')

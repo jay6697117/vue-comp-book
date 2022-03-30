@@ -1,10 +1,8 @@
 <template>
-  <view>
-    <view class="wrap">
-      <view class="text">正在建设中, 尽情期待哦 ～</view>
-      <img class="img" :src="require('@/assets/404.png')" alt="404img" />
-    </view>
-  </view>
+  <div class="wrap">
+    <div class="text">正在建设中, 尽情期待哦 ～</div>
+    <img class="img" :src="require('@/assets/404.png')" alt="404img" />
+  </div>
 </template>
 
 <script>
@@ -15,22 +13,22 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 .wrap {
-  font-size: 48rpx;
-  color: skyblue;
-  padding-top: 250rpx;
+  font-size: 24px;
+  color: purple;
+}
 
-  .text {
-    text-align: center;
-    height: 100rpx;
-    line-height: 100rpx;
-    margin-bottom: 120rpx;
-  }
-  .img {
-    width: 100%;
-    height: auto;
-    margin-left: 80rpx;
-  }
+.wrap .text {
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+.wrap .img {
+  display: block;
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
 }
 </style>
