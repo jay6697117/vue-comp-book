@@ -45,8 +45,9 @@ export default new Router({
     },
     // 404页面
     {
-      path: '*',
+      path: '/404',
       component: () => import('@/views/404.vue')
-    }
+    },
+    { path: '*', redirect: { path: '/404' } }
   ]
 });
