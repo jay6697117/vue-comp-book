@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import Alert from '../src/components/alert/alert.js'
+import App from '@/App.vue'
+import router from '@/router'
+import Alert from '@/components/alert/alert.js'
 
 Vue.config.productionTip = false
 
