@@ -36,7 +36,9 @@ export default {
       return new Promise(resolve => {
         let valid = true;
         let count = 0;
+        console.log('this.fields:', this.fields)
         this.fields.forEach(field => {
+          console.log('field:', field)
           field.validate('', errors => {
             if (errors) {
               valid = false;
