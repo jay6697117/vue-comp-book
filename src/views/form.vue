@@ -43,7 +43,7 @@ export default {
   methods: {
     broadcastTest1() {
       console.log('broadcastTest1 run');
-      this.broadcast('iForm', 'broadcast-iForm-test');
+      // this.broadcast('iForm', 'broadcast-iForm-test');
       // this.broadcast('iForm', 'broadcast-iForm-test', 'hello broadcast-iForm-test 1');
       // this.broadcast('iForm', 'broadcast-iForm-test', 'hello broadcast-iForm-test 1', 'hello broadcast-iForm-test 2');
       // this.broadcast('iForm', 'broadcast-iForm-test', [
