@@ -41,7 +41,13 @@ export default {
   methods: {
     dispatchTest() {
       console.log('dispatchTest run');
-      this.dispatch('iFormView', 'dispatch-iFormView-test', 'hello dispatch-iFormView-test 222');
+      // this.dispatch('iFormView', 'dispatch-iFormView-test', 'hello dispatch-iFormView-test 222');
+      this.dispatch(
+        'iFormView',
+        'dispatch-iFormView-test',
+        'hello dispatch-iFormView-test 2',
+        'hello dispatch-iFormView-test 22'
+      );
     },
     setRules() {
       let rules = this.getRules();

@@ -43,19 +43,26 @@ export default {
   methods: {
     broadcastTest1() {
       console.log('broadcastTest1 run');
-      this.broadcast('iForm', 'broadcast-iForm-test', 'hello broadcast-iForm-test');
+      this.broadcast('iForm', 'broadcast-iForm-test');
+      // this.broadcast('iForm', 'broadcast-iForm-test', 'hello broadcast-iForm-test 1');
+      // this.broadcast('iForm', 'broadcast-iForm-test', 'hello broadcast-iForm-test 1', 'hello broadcast-iForm-test 2');
       // this.broadcast('iForm', 'broadcast-iForm-test', [
       //   'hello broadcast-iForm-test 1',
       //   'hello broadcast-iForm-test 11'
       // ]);
-      // this.broadcast('iForm', 'broadcast-iForm-test', {
-      //   a: 'hello broadcast-iForm-test 1',
-      //   b: 'hello broadcast-iForm-test 11'
-      // });
+      this.broadcast('iForm', 'broadcast-iForm-test', {
+        a: 'hello broadcast-iForm-test 1',
+        b: 'hello broadcast-iForm-test 11'
+      });
     },
     broadcastTest2() {
       console.log('broadcastTest2 run');
-      this.broadcast('iFormItem', 'broadcast-iFormItem-test', 'hello broadcast-iFormItem-test');
+      this.broadcast(
+        'iFormItem',
+        'broadcast-iFormItem-test',
+        'hello broadcast-iFormItem-test 1',
+        'hello broadcast-iFormItem-test 2'
+      );
       // this.broadcast('iFormItem', 'broadcast-iFormItem-test', [
       //   'hello broadcast-iFormItem-test 2',
       //   'hello broadcast-iFormItem-test 22'
