@@ -55,6 +55,17 @@ export default {
     handleReset() {
       this.$refs.form.resetFields();
     }
+  },
+  mounted() {
+    console.log('mounted run');
+    this.broadcast('iForm', 'on-form-broadcast-tes', 'hello iForm on-form-broadcast-tes ...');
   }
 };
 </script>
+
+<style scoped>
+button {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+</style>
