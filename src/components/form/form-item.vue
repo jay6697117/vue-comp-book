@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div style="margin-bottom: 10px">
     <label v-if="label" :class="{ 'i-form-item-label-required': isRequired }">{{ label }}</label>
-    <div>
+    <div style="margin-bottom: 10px">
       <slot></slot>
       <div v-if="validateState === 'error'" class="i-form-item-message">{{ validateMessage }}</div>
     </div>
-    <button @click="dispatchTest">dispatch-iFormView-test</button>
+    <span class="btn" @click="dispatchTest">dispatch-iFormView-test</span>
   </div>
 </template>
 <script>
 import AsyncValidator from 'async-validator';
-import Emitter from '../../mixins/emitter.js';
+import Emitter from '@/mixins/emitter.js';
 
 export default {
   name: 'iFormItem',
@@ -143,5 +143,12 @@ export default {
 }
 .i-form-item-message {
   color: red;
+}
+
+.btn {
+  border: 1px solid #000;
+  padding: 2px 10px;
+  background: lightblue;
+  border-radius: 4px;
 }
 </style>
