@@ -54,8 +54,8 @@ export default {
     }
   },
   created() {
-    this.$on('on-form-broadcast-tes', param => {
-      console.log('param:', param);
+    this.$on('broadcast-iForm-test', param => {
+      console.log('broadcast-iForm-test param:', param);
     });
     this.$on('on-form-item-add', field => {
       if (field) this.fields.push(field);

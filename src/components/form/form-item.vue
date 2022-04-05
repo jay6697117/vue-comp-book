@@ -5,6 +5,7 @@
       <slot></slot>
       <div v-if="validateState === 'error'" class="i-form-item-message">{{ validateMessage }}</div>
     </div>
+    <button @click="dispatchTest">dispatch-iFormView-test</button>
   </div>
 </template>
 <script>
@@ -38,6 +39,10 @@ export default {
     }
   },
   methods: {
+    dispatchTest() {
+      console.log('dispatchTest run');
+      this.dispatch('iFormView', 'dispatch-iFormView-test', 'hello dispatch-iFormView-test 222');
+    },
     setRules() {
       let rules = this.getRules();
       if (rules.length) {
@@ -107,6 +112,11 @@ export default {
     onFieldChange() {
       this.validate('change');
     }
+  },
+  created() {
+    this.$on('broadcast-iFormItem-test', param => {
+      console.log('broadcast-iFormItem-test param:', param);
+    });
   },
   // 组件渲染时，将实例缓存在 Form 中
   mounted() {

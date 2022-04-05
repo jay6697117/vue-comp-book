@@ -11,7 +11,8 @@
     </i-form>
     <button @click="handleSubmit">提交</button>
     <button @click="handleReset">重置</button>
-    <button @click="broadcastTest">on-form-broadcast-test</button>
+    <button @click="broadcastTest1">broadcast-iForm-test</button>
+    <button @click="broadcastTest2">broadcast-iFormItem-test</button>
   </div>
 </template>
 <script>
@@ -21,8 +22,9 @@ import iFormItem from '../components/form/form-item.vue';
 import iInput from '../components/input/input.vue';
 
 export default {
-  mixins: [Emitter],
+  name: 'iFormView',
   components: { iForm, iFormItem, iInput },
+  mixins: [Emitter],
   data() {
     return {
       formValidate: {
@@ -39,9 +41,27 @@ export default {
     };
   },
   methods: {
-    broadcastTest() {
-      console.log('broadcastTest run');
-      this.broadcast('iForm', 'on-form-broadcast-tes', 'hello iForm on-form-broadcast-tes ...');
+    broadcastTest1() {
+      console.log('broadcastTest1 run');
+      this.broadcast('iForm', 'broadcast-iForm-test', [
+        'hello broadcast-iForm-test 1',
+        'hello broadcast-iForm-test 11'
+      ]);
+      // this.broadcast('iForm', 'broadcast-iForm-test', {
+      //   a: 'hello broadcast-iForm-test 1',
+      //   b: 'hello broadcast-iForm-test 11'
+      // });
+    },
+    broadcastTest2() {
+      console.log('broadcastTest2 run');
+      this.broadcast('iFormItem', 'broadcast-iFormItem-test', [
+        'hello broadcast-iFormItem-test 2',
+        'hello broadcast-iFormItem-test 22'
+      ]);
+      // this.broadcast('iFormItem', 'broadcast-iFormItem-test', {
+      //   c: 'hello broadcast-iFormItem-test 2',
+      //   d: 'hello broadcast-iFormItem-test 22'
+      // });
     },
     handleSubmit() {
       this.$refs.form.validate(valid => {
@@ -56,9 +76,10 @@ export default {
       this.$refs.form.resetFields();
     }
   },
-  mounted() {
-    console.log('mounted run');
-    this.broadcast('iForm', 'on-form-broadcast-tes', 'hello iForm on-form-broadcast-tes ...');
+  created() {
+    this.$on('dispatch-iFormView-test', param => {
+      console.log('dispatch-iFormView-test param:', param);
+    });
   }
 };
 </script>
