@@ -1,5 +1,5 @@
 function broadcastFn(componentName, eventName, ...params) {
-  console.log('params 000:', params);
+  // console.log('broadcastFn params 000:', params);
   this.$children.forEach(child => {
     const name = child.$options.name;
 
@@ -8,7 +8,7 @@ function broadcastFn(componentName, eventName, ...params) {
       // child.$emit.apply(child, [eventName].concat(params));
       // child.$emit.apply(child, [eventName, params]); // 第3
     } else {
-      console.log('params 001:', params);
+      // console.log('broadcastFn params 001:', params);
       broadcastFn.apply(child, [componentName, eventName].concat([params])); // 同第3
       // broadcastFn.apply(child, [componentName, eventName].concat(params));
       // broadcastFn.apply(child, [componentName, eventName, params]); // 第3
@@ -18,7 +18,7 @@ function broadcastFn(componentName, eventName, ...params) {
 export default {
   methods: {
     dispatch(componentName, eventName, ...params) {
-      console.log('params 002:', params);
+      // console.log('dispatch params 000:', params);
       // console.log('mixins dispatch this.$parent:', this.$parent);
       let parent = this.$parent || this.$root;
       let name = parent.$options.name;
