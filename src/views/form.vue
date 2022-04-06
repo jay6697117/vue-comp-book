@@ -57,20 +57,20 @@ export default {
     },
     broadcastTest2() {
       console.log('broadcastTest2 run');
-      this.broadcast(
-        'iFormItem',
-        'broadcast-iFormItem-test',
-        'hello broadcast-iFormItem-test 1',
-        'hello broadcast-iFormItem-test 2'
-      );
+      // this.broadcast(
+      //   'iFormItem',
+      //   'broadcast-iFormItem-test',
+      //   'hello broadcast-iFormItem-test 1',
+      //   'hello broadcast-iFormItem-test 2'
+      // );
       // this.broadcast('iFormItem', 'broadcast-iFormItem-test', [
       //   'hello broadcast-iFormItem-test 2',
       //   'hello broadcast-iFormItem-test 22'
       // ]);
-      // this.broadcast('iFormItem', 'broadcast-iFormItem-test', {
-      //   c: 'hello broadcast-iFormItem-test 2',
-      //   d: 'hello broadcast-iFormItem-test 22'
-      // });
+      this.broadcast('iFormItem', 'broadcast-iFormItem-test', {
+        c: 'hello broadcast-iFormItem-test 2',
+        d: 'hello broadcast-iFormItem-test 22'
+      });
     },
     handleSubmit() {
       this.$refs.form.validate(valid => {
