@@ -1,10 +1,6 @@
 <template>
-    <div>
-        《Vue.js组件精讲》示例
-    </div>
+  <div>《Vue.js组件精讲》示例</div>
 </template>
 <script>
-    export default {
-
-    }
+export default {};
 </script>

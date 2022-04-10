@@ -1,15 +1,15 @@
 <template>
-    <InputNumber :value.sync="value" />
+  <InputNumber :value.sync="value" />
 </template>
 <script>
-    import InputNumber from '../components/input-number/input-number.vue';
+import InputNumber from '../components/input-number/input-number.vue';
 
-    export default {
-        components: { InputNumber },
-        data () {
-            return {
-                value: 1
-            }
-        }
-    }
+export default {
+  components: { InputNumber },
+  data() {
+    return {
+      value: 1
+    };
+  }
+};
 </script>

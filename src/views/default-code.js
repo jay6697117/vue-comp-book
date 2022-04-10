@@ -1,5 +1,4 @@
-const code =
-`<template>
+const code = `<template>
     <div>
         <input v-model="message">
         {{ message }}
